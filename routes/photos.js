@@ -127,8 +127,8 @@ function uploadPhoto(params, callback){
             }
           });
         }
-      });*/
-    }
+      });
+    }*/
   });
 }
 
