@@ -67,7 +67,7 @@ router.post('/upload', function(req, res) {
             delete params.newFilename;
             model.createPhoto(params, function(err, obj){
               if(err){
-                res.status(400).send({error: 'Invalid photo data _ 4'});
+                res.status(400).send({error: 'Invalid photo data - 4'});
               } else {
                 res.send(obj);
               }
@@ -106,7 +106,7 @@ function uploadPhoto(params, callback){
     if(err){
       callback(err);
     } else {
-      var contentType = 'image/jpeg';
+      var contentType = 'image/jpg';
       var uploadPath = 'uploads/' + params.newFilename;
       var uploadData = {
         Bucket: globals.awsVariables().bucket,
