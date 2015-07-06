@@ -115,7 +115,7 @@ function uploadPhoto(params, callback){
         ACL:'public-read',
         ContentType: contentType
       }
-      /*putS3Object(uploadData, function(err, data){
+      putS3Object(uploadData, function(err, data){
         if(err){
           callback(err);
         } else {
@@ -128,7 +128,7 @@ function uploadPhoto(params, callback){
           });
         }
       });
-    }*/
+    }
   });
 }
 
