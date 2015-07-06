@@ -60,14 +60,14 @@ router.post('/upload', function(req, res) {
         params.newFilename = params.userID + '/' + params.filePath.replace('tmp/', timestamp);
         uploadPhoto(params, function(err, fileObject){
           if(err){
-            res.status(400).send({error: 'Invalid photo data'});
+            res.status(400).send({error: 'Invalid photo data - 3'});
           } else {
             params.url = fileObject.url;
             delete params.filePath;
             delete params.newFilename;
             model.createPhoto(params, function(err, obj){
               if(err){
-                res.status(400).send({error: 'Invalid photo data'});
+                res.status(400).send({error: 'Invalid photo data _ 4'});
               } else {
                 res.send(obj);
               }
