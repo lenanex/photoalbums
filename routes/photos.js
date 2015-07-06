@@ -105,7 +105,6 @@ function uploadPhoto(params, callback){
   fs.readFile(params.filePath, function (err, imgData) {
     if(err){
       callback(err);
-      res.status(400).send({error: 'Invalid photo ID - al'});
     } else {
       var contentType = 'image/jpg';
       var uploadPath = 'uploads/' + params.newFilename;
@@ -116,7 +115,7 @@ function uploadPhoto(params, callback){
         ACL:'public-read',
         ContentType: contentType
       }
-      putS3Object(uploadData, function(err, data){
+      /*putS3Object(uploadData, function(err, data){
         if(err){
           callback(err);
         } else {
@@ -128,7 +127,7 @@ function uploadPhoto(params, callback){
             }
           });
         }
-      });
+      });*/
     }
   });
 }
