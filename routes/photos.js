@@ -106,7 +106,7 @@ function uploadPhoto(params, callback){
     if(err){
       callback(err);
     } else {
-      var contentType = 'image/jpg';
+      var contentType = 'image/jpeg';
       var uploadPath = 'uploads/' + params.newFilename;
       var uploadData = {
         Bucket: globals.awsVariables().bucket,
@@ -134,10 +134,6 @@ function uploadPhoto(params, callback){
 
 function putS3Object(uploadData, callback){
   var aws = require('aws-sdk');
-  /*if(globals.awsVariables().key){
-    aws.config.update({ accessKeyId: globals.awsVariables().key, secretAccessKey: globals.
-awsVariables().secret });
-  }*/
   var s3 = new aws.S3();
   s3.putObject(uploadData, function(err, data) {
     if(err){
