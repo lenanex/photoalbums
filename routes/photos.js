@@ -79,7 +79,7 @@ router.post('/upload', function(req, res) {
     }
   });
   } else {
-    res.status(400).send({error: 'Invalid photo data'});
+    res.status(400).send({error: 'Invalid photo data - 2'});
   }
 });
 
